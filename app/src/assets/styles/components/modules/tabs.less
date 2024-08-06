@@ -1,0 +1,35 @@
+.tabs {
+  * {
+    box-sizing: border-box;
+  }
+  .tabs-nav {
+    position: relative;
+    z-index: 2;
+
+    &__title {
+      // all: unset;
+      // cursor: pointer;
+    }
+  }
+
+  &__content {
+    position: relative;
+    top: -2px;
+  }
+
+  &__body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px 10px 20px 10px;
+
+    display: none;
+  }
+
+  &__title-active {
+    border-bottom: 5px solid #0515fd;
+  }
+  &__body-active {
+    display: block;
+  }
+}

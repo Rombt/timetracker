@@ -1,0 +1,10 @@
+// Адаптивное CSS свойство источник
+.adaptive-prop(@property, @max_val, @min_val) {
+  @addSize: @max_val - @min_val;
+  @maxWidth: @_width_main-wrapper - @_width_min_viewport;
+  @{property}: ~'calc(@{min_val}px + @{addSize} * ((100vw - @{_width_min_viewport}px)/@{maxWidth}))';
+
+  @media (min-width: ~'@{_width_main-wrapper}px') {
+    @{property}: ~'@{max_val}px';
+  }
+}
