@@ -2,7 +2,7 @@
 
 class Controller 
 {  
-   public $view;
+   protected $view;
 
    public function __construct(){
       

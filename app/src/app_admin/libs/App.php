@@ -22,7 +22,7 @@ class App
          if (class_exists($class_name)) {
             $controller = new $class_name;
          }else {
-            self::showError( 'Error!  Controller class does not exist!!!' );
+            self::showError( 'Controller class does not exist!!!' );
          }
 
 
@@ -37,12 +37,12 @@ class App
 
 
       }else{
-         self::showError( 'Error controller does not exist!!!' );
+         self::showError( 'Controller does not exist!!!' );
       }
    }
 
    static function showError( $error ){
-       echo '<h1>' . $error . '</h1>';
+       echo '<h1> Error!   ' . $error . '</h1>';
    }
    
    static function dump( $param ){
