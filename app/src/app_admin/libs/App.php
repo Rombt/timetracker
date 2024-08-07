@@ -15,7 +15,9 @@ class App
       $file_controller = 'controllers/'.$url[0].'.php';
       if (file_exists($file_controller)) {
 
-      
+         require_once $file_controller;
+         $class_name = "Controller_" . $url[0]; 
+         $controller = new $class_name;
       }else{
          echo 'Error controller dose not exist!!!';
       }

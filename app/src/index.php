@@ -1,5 +1,5 @@
 <?php 
 
-require_once 'inc/autoloader.php';
+require_once 'app_admin/libs/autoloader.php';
 
-new App();
+$app = new App();
