@@ -12,7 +12,7 @@ class App
          $url[] = "index";
       }
 
-      $file_controller = 'controllers/'.$url[0].'.php';
+      $file_controller = __DIR__ . '/../controllers/'.$url[0].'.php';
       if (file_exists($file_controller)) {
 
          require_once $file_controller;
