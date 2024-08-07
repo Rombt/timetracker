@@ -42,7 +42,7 @@ class App
    }
 
    static function showError( $error ){
-       echo '<h1> Error!   ' . $error . '</h1>';
+       echo '<h1 style="color:red;"> Error!   ' . $error . '</h1>';
    }
    
    static function dump( $param ){
