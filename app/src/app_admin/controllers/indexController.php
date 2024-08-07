@@ -1,6 +1,6 @@
 <?php 
 
-class Controller_index extends Controller
+class indexController extends Controller
 {
    public function __construct() {
       parent::__construct();

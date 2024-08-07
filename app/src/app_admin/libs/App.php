@@ -12,12 +12,19 @@ class App
          $url[] = "index";
       }
 
-      $file_controller = __DIR__ . '/../controllers/'.$url[0].'.php';
+      $file_controller = __DIR__ . '/../controllers/'.$url[0].'Controller.php';
+
       if (file_exists($file_controller)) {
 
          require_once $file_controller;
-         $class_name = "Controller_" . $url[0]; 
-         $controller = new $class_name;
+         $class_name = $url[0] . "Controller"; 
+
+         if (class_exists($class_name)) {
+            $controller = new $class_name;
+         }else {
+            self::showError( 'Error!  Controller class does not exist!!!' );
+         }
+
 
          if (isset($url[1])) {
             
@@ -30,8 +37,18 @@ class App
 
 
       }else{
-         echo 'Error controller dose not exist!!!';
+         self::showError( 'Error controller does not exist!!!' );
       }
+   }
+
+   static function showError( $error ){
+       echo '<h1>' . $error . '</h1>';
+   }
+   
+   static function dump( $param ){
+       echo '<pre>';
+       var_dump($param);
+       echo '</pre>';
    }
    
 }
