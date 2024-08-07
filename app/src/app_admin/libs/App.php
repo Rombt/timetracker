@@ -18,6 +18,17 @@ class App
          require_once $file_controller;
          $class_name = "Controller_" . $url[0]; 
          $controller = new $class_name;
+
+         if (isset($url[1])) {
+            
+            
+
+            
+         }else {
+            $controller->index();
+         }
+
+
       }else{
          echo 'Error controller dose not exist!!!';
       }
