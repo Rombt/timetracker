@@ -1,0 +1,25 @@
+# Включение отображения ошибок PHP
+
+php_value error_reporting -1
+php_flag display_errors on
+php_flag display_startup_errors on 
+php_flag ignore_repeated_source off
+php_flag track_errors on 
+php_flag log_errors on
+
+
+
+
+# Включение мод_rewrite для использования файлов .htaccess
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+   RewriteCond %{REQUEST_FILENAME} !-d
+   RewriteCond %{REQUEST_FILENAME} !-f
+   RewriteCond %{REQUEST_FILENAME} !-l
+   RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
+
+   
+
+
+</IfModule>

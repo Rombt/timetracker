@@ -209,6 +209,7 @@ export const path = {
           `${this.src.php}/screenshot.png`,
           `${this.src.php}/assets/styles/libs/**/*.*`,
           `${this.src.php}/assets/js/libs/**/*.*`,
+          `${this.src.php}/.htaccess`,
         ],
         plug: [
           `${this.src.php}/${this.srcPluginName}/README.md`,
