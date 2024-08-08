@@ -4,10 +4,10 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="<?php echo URL ?>/assets/styles/main-style.min.css?<?php echo rand( 10, 100 ) ?>" />
+   <link rel="stylesheet" href="<?php echo URL ?>/assets/styles/main-style.min.css?<?php echo rand() ?>" />
 
    <?php if ( isset( $this->addCss ) ) : ?>
-   <link rel="stylesheet" href="<?php echo $this->addCss . '?' . rand( 10, 100 ) ?>" />
+   <link rel="stylesheet" href="<?php echo $this->addCss . '?' . rand() ?>" />
    <?php endif ?>
 
 
