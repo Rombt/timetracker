@@ -5,9 +5,9 @@
 			<section class="rmbt-container rmbt-footer-page">
 				<div class="rmbt-footer-page__row">
 
-					<div class="rmbt-footer-page__col header-logo">
+					<a href="/" class="rmbt-footer-page__col footer-logo">
 						<span>Time tracker</span>
-					</div>
+					</a>
 					<div class="rmbt-footer-page__col footer-menu">
 						<ul>
 							<li><a href="/">home</a></li>
