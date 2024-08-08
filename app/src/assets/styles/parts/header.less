@@ -1,2 +1,69 @@
-body {
+.rmbt-top-string-header-full-width {
+  background-color: #000;
+}
+.rmbt-top-string-header {
+  &__row {
+    .row-flex();
+    min-height: 75px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__col {
+  }
+  .header-logo {
+    .col();
+    .size(3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 20px;
+
+    h1 {
+      color: #fff;
+      margin: 0px 0px 0px 0px;
+
+      font-size: 22px;
+      font-family: MontserratAlternates;
+      font-weight: 800;
+      color: #fff;
+      text-align: center;
+      letter-spacing: 0.2em;
+    }
+
+    .wrap-img {
+      width: 60px;
+      height: 60px;
+    }
+  }
+  .header-menu {
+    .col();
+    .size(6);
+
+    color: #fff;
+
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0;
+
+      li {
+        list-style: none;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+        text-transform: uppercase;
+        letter-spacing: 0.3em;
+
+        font-size: 18px;
+        font-family: 'Dimkin Light';
+
+        &:hover {
+          border-bottom: 1px solid #fff;
+        }
+      }
+    }
+  }
 }
