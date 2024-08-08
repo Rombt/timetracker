@@ -5,6 +5,19 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="<?php echo URL ?>/assets/styles/main-style.min.css?<?php echo rand( 10, 100 ) ?>" />
+
+	<?php
+
+	echo '<br/>';
+	var_dump( $this );
+
+	if ( isset( $this->addCss ) ) : ?>
+		<link rel="stylesheet" href="<?php echo URL . '/' . $this->addCss . rand( 10, 100 ) ?>" />
+	<?php endif ?>
+
+
+
+
 	<title>Time tracker 1.0.0 by Rombt</title>
 </head>
 
