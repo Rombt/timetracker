@@ -12,6 +12,7 @@ footer {
     justify-content: space-around;
 
     padding-top: 50px;
+    padding-bottom: 50px;
   }
   &__col {
   }
@@ -43,7 +44,7 @@ footer {
       a {
         text-decoration: none;
         color: inherit;
-        text-transform: uppercase;
+        text-transform: capitalize;
         letter-spacing: 0.3em;
 
         font-size: 14px;
@@ -59,7 +60,7 @@ footer {
   .copyright {
     position: relative;
     box-sizing: border-box;
-    height: 50px;
+    // height: 50px;
     padding: 10px 0px 10px 0px;
 
     display: flex;
@@ -82,16 +83,17 @@ footer {
 
       top: 50%;
       transform: translate(0%, -50%);
-      width: 35%;
+      width: 25%;
       height: 1px;
       background-color: #fff;
+      border: none;
     }
 
     &:after {
-      left: 0;
+      left: 15%;
     }
     &:before {
-      right: 0;
+      right: 15%;
     }
   }
 }
