@@ -43,24 +43,17 @@ class Database {
 			self::$connect->exec( "CREATE DATABASE IF NOT EXISTS $this->db_name" );
 			self::$connect->exec( "USE $this->db_name" );
 
-
-			if ( ! $this->tableExists( 'users' ) ) {
-
-				$createUsersTableSQL = "
+			$createUsersTableSQL = "
            CREATE TABLE IF NOT EXISTS users (
                id INT AUTO_INCREMENT PRIMARY KEY,
                username VARCHAR(255) NOT NULL UNIQUE,
                password VARCHAR(255) NOT NULL,
                role ENUM('admin', 'operator') NOT NULL
            )";
-				self::$connect->exec( $createUsersTableSQL );
-			} else {
-				// echo "Users table already exists\n";
-			}
+			self::$connect->exec( $createUsersTableSQL );
 
 
-			if ( ! $this->tableExists( 'timelogs' ) ) {
-				$createTimelogsTableSQL = "
+			$createTimelogsTableSQL = "
            CREATE TABLE IF NOT EXISTS timelogs (
                id INT AUTO_INCREMENT PRIMARY KEY,
                user_id INT NOT NULL,
@@ -69,10 +62,8 @@ class Database {
                comment TEXT,
                FOREIGN KEY (user_id) REFERENCES users(id)
            )";
-				self::$connect->exec( $createTimelogsTableSQL );
+			self::$connect->exec( $createTimelogsTableSQL );
 
-			} else {
-			}
 
 		} catch (PDOException $exception) {
 			App::showError( "Error creating database or tables: " . $exception->getMessage() );
