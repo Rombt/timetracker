@@ -14,7 +14,7 @@ class View {
 
 	public function render( $path, $file = 'index' ) {
 
-		if ( file_exists( __DIR__ . '/../views/' . $path . '/' . $file . '.php' ) ) {
+		if ( file_exists( TEMPLATE_PATH . '/' . $path . '/' . $file . '.php' ) ) {
 
 
 
