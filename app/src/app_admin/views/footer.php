@@ -6,7 +6,7 @@
 				<div class="rmbt-footer-page__row">
 
 					<div class="rmbt-footer-page__col header-logo">
-						<h1>Time tracker</h1>
+						<span>Time tracker</span>
 					</div>
 					<div class="rmbt-footer-page__col footer-menu">
 						<ul>
