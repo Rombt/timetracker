@@ -3,16 +3,16 @@
 
 <main>
 
-   You are into views\indexController
+	You are into views\indexController
 
 
-   <?php
+	<?php
 
 	echo "<pre>";
 	// var_dump( $_SERVER );
-	echo DOMAINE;
+	echo URL;
 	echo "</pre>";
-	
+
 
 	?>
 
