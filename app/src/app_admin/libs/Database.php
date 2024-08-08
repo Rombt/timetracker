@@ -40,10 +40,8 @@ class Database {
 
 	public function createDatabaseAndTables() {
 		try {
-			$this->connect->exec( "CREATE DATABASE IF NOT EXISTS $this->db_name" );
-			echo "Database created successfully\n";
-
-			$this->connect->exec( "USE $this->db_name" );
+			self::$connect->exec( "CREATE DATABASE IF NOT EXISTS $this->db_name" );
+			self::$connect->exec( "USE $this->db_name" );
 
 
 			if ( ! $this->tableExists( 'users' ) ) {
@@ -55,10 +53,9 @@ class Database {
                password VARCHAR(255) NOT NULL,
                role ENUM('admin', 'operator') NOT NULL
            )";
-				$this->connect->exec( $createUsersTableSQL );
-				echo "Users table created successfully\n";
+				self::$connect->exec( $createUsersTableSQL );
 			} else {
-				echo "Users table already exists\n";
+				// echo "Users table already exists\n";
 			}
 
 
@@ -72,11 +69,9 @@ class Database {
                comment TEXT,
                FOREIGN KEY (user_id) REFERENCES users(id)
            )";
-				$this->connect->exec( $createTimelogsTableSQL );
-				echo "Timelogs table created successfully\n";
+				self::$connect->exec( $createTimelogsTableSQL );
 
 			} else {
-				echo "Timelogs table already exists\n";
 			}
 
 		} catch (PDOException $exception) {
@@ -87,10 +82,9 @@ class Database {
 
 	private function tableExists( $tableName ) {
 		try {
-			$result = $this->connect->query( "SELECT 1 FROM information_schema.tables WHERE table_schema = '$this->db_name' AND table_name = '$tableName' LIMIT 1" );
+			$result = self::$connect->query( "SELECT 1 FROM information_schema.tables WHERE table_schema = '$this->db_name' AND table_name = '$tableName' LIMIT 1" );
 			return $result !== false && $result->rowCount() > 0;
 		} catch (PDOException $exception) {
-			echo "Error checking table existence: " . $exception->getMessage();
 			App::showError( "Error checking table existence: " . $exception->getMessage() );
 			return false;
 		}
