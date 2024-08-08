@@ -5,6 +5,8 @@ class View {
 	public $addCss;
 	public $addJs;
 
+	private $title = '';
+
 	public function __construct() {
 
 	}
@@ -33,6 +35,19 @@ class View {
 			App::showError( "Template by $path does not exist!!!" );
 		}
 	}
+
+	public function getTitle() {
+		return $this->title;
+	}
+
+	public function setTitle( $title ) {
+		$this->title = $title;
+
+	}
+
+
+
+
 
 	// public function addHeader() {
 	//          if (file_exists(__DIR__ . '/../views/header.php')) {
