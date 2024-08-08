@@ -12,6 +12,15 @@
                      You are into views\indexController
                   </h2>
 
+
+                  <?php
+
+						echo "<pre>";
+						var_dump( $_SERVER );
+						echo "</pre>";
+                  
+						?>
+
                </div>
             </div>
          </section>
