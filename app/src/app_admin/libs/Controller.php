@@ -9,9 +9,6 @@ class Controller {
 
 		$this->view = new View;
 
-
-
-
 		$this->name_model = $this->getBaseNameByController() . 'Model';
 
 		if ( file_exists( DIR_PATH_APP_ADMIN . '/models/' . $this->name_model . '.php' ) ) {

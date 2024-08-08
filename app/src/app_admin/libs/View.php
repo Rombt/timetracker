@@ -4,7 +4,6 @@ class View {
 
 	public $addCss;
 	public $addJs;
-
 	private $title = '';
 
 	public function __construct() {
