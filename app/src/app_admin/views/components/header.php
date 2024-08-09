@@ -26,7 +26,7 @@
 								<div class="wrap-img">
 									<img src="<?php echo URL ?>/assets/img/header-logo_color_1.png" alt="">
 								</div>
-								<span>Time tracker</span>
+								<span class='font-title'>Time tracker</span>
 							</a>
 							<?php require TEMPLATE_PATH . '/components/mainMenu.php' ?>
 						</div>
