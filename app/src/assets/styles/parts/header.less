@@ -1,5 +1,6 @@
 .rmbt-top-string-header-full-width {
   background-color: #000;
+  border: 1px solid #000;
 }
 .rmbt-top-string-header {
   &__row {
@@ -36,33 +37,35 @@
       height: 60px;
     }
   }
-  .header-menu {
+  .cont-main-horizontal-menu {
     .col();
     .size(6);
 
-    color: #fff;
+    nav {
+      color: #fff !important;
 
-    ul {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0;
+      ul {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0;
 
-      li {
-        list-style: none;
-      }
+        li {
+          list-style: none;
+        }
 
-      a {
-        text-decoration: none;
-        color: inherit;
-        text-transform: uppercase;
-        letter-spacing: 0.3em;
+        a {
+          text-decoration: none;
+          color: inherit;
+          text-transform: uppercase;
+          letter-spacing: 0.3em;
 
-        font-size: 18px;
-        font-family: 'Dimkin Light';
+          font-size: 18px;
+          font-family: 'Dimkin Light';
 
-        &:hover {
-          border-bottom: 1px solid #fff;
+          &:hover {
+            border-bottom: 1px solid #fff;
+          }
         }
       }
     }

@@ -146,6 +146,8 @@ class HorizontalMenu {
 
     this.lastWidthWindow = window.innerWidth;
 
+    console.log('**************** = ');
+
     this.forEachMenu();
     this.listenClick();
     this.listenKeydown();
@@ -630,7 +632,7 @@ class HorizontalMenu {
 }
 
 const param = {
-  containersMenu: ['.cont-horizont-menu'],
+  containersMenu: ['.cont-main-horizontal-menu'],
   contAdditionalClasses: {
     drop: [],
     overflow: [],

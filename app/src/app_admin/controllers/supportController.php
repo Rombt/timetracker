@@ -1,6 +1,6 @@
 <?php
 
-class newsController extends Controller {
+class supportController extends Controller {
 	public function __construct() {
 		parent::__construct();
 	}

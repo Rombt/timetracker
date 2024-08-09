@@ -1,7 +1,7 @@
 <?php
 
-// define( 'URL', getDomain() . '/timetracker' );	// for work
-define( 'URL', getDomain() );			// for home
+define( 'URL', getDomain() . '/timetracker' );	// for work
+// define( 'URL', getDomain() );			// for home
 define( 'DIR_PATH_APP_ADMIN', __DIR__ . '/..' );
 
 define( 'TEMPLATE_PATH', DIR_PATH_APP_ADMIN . '/views' );

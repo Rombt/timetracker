@@ -1,6 +1,9 @@
 <?php require_once TEMPLATE_PATH . '/components/header.php' ?>
 
 
+
+
+
 <main>
 
    <div class="wrapper-section">
@@ -10,7 +13,7 @@
 
                <div class="rmbt-main-section__col">
 
-                  <h2>You are into views\indexController</h2>
+                  <h2>You are into views\supportController</h2>
 
 
 
@@ -21,8 +24,6 @@
    </div>
 
 </main>
-
-
 
 
 <?php require_once TEMPLATE_PATH . '/components/footer.php' ?>
