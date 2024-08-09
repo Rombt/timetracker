@@ -15,19 +15,13 @@ class View {
 
 		if ( file_exists( TEMPLATE_PATH . '/' . $path . '/' . $file . '.php' ) ) {
 
-
-
 			if ( file_exists( TEMPLATE_PATH . '/' . $path . '/style.css' ) ) {
 				$this->addCss = URL . '/app_admin/views/' . $path . '/' . 'style.css';
 			}
 
-
 			if ( file_exists( TEMPLATE_PATH . '/' . $path . '/scripts.js' ) ) {
 				$this->addJs = URL . '/app_admin/views/' . $path . '/' . 'scripts.js';
 			}
-
-
-
 
 			require __DIR__ . '/../views/' . $path . '/' . $file . '.php';
 		} else {
