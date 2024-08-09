@@ -11,8 +11,11 @@
 					<div class="rmbt-main-section__col">
 
 						<div class="login-form-wrap">
-
 							<form action="#">
+								<label for="email">
+									Login:
+									<input type="text" id="login" name='login'>
+								</label>
 								<label for="email">
 									Email:
 									<input type="text" id="email" name='email'>
@@ -21,8 +24,12 @@
 									Password:
 									<input type="text" id="password" name='password'>
 								</label>
+								<label for="password">
+									Password confirm:
+									<input type="text" id="passwordConfirm" name='passwordConfirm'>
+								</label>
 
-								<button type='submit'> log In </button>
+								<button type='submit'> registration </button>
 
 							</form>
 						</div>
