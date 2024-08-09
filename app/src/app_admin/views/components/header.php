@@ -28,7 +28,7 @@
 								</div>
 								<span>Time tracker</span>
 							</a>
-							<?php require_once TEMPLATE_PATH . '/components/mainMenu.php' ?>
+							<?php require TEMPLATE_PATH . '/components/mainMenu.php' ?>
 						</div>
 					</section>
 				</div>
