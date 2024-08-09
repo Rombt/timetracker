@@ -21,6 +21,7 @@
   }
   &__wrap {
     form {
+      position: relative;
       display: flex;
       flex-direction: column;
       width: 100%;
@@ -56,6 +57,28 @@
       button:disabled {
         color: @color_text_lite;
         border: 1px solid @color_blocks_border_lite;
+        background-color: @color_blocks_background_lite;
+      }
+
+      .err-conf-pass {
+        position: absolute;
+        left: 50%;
+        bottom: 62px;
+        transform: translate(-50%, 0%);
+        width: 80%;
+        // height: 40px;
+
+        background-color: @color_blocks_background;
+
+        text-align: center;
+        line-height: 40px;
+
+        color: @color_text_error;
+        font-size: 10px;
+        text-transform: uppercase;
+        background: transparent;
+
+        display: none;
       }
     }
   }
