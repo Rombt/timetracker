@@ -20,18 +20,18 @@
 								</label>
 								<label for="email">
 									Email:
-									<input type="text" id="email" name='email' required>
+									<input type="email" id="email" name='email' required>
 								</label>
 								<label for="password">
 									Password:
-									<input type="text" id="password" name='password' required>
+									<input type="password" id="password" name='password' required>
 								</label>
-								<label for="password">
+								<label for="passwordConfirm">
 									Password confirm:
-									<input type="text" id="passwordConfirm" name='passwordConfirm' required>
+									<input type="password" id="passwordConfirm" name='passwordConfirm' required>
 								</label>
 
-								<button type='submit' class='font-text'> registration </button>
+								<button id='submitRegForm' type='submit' class='font-text' disabled> registration </button>
 
 							</form>
 						</div>
