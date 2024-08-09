@@ -13,7 +13,7 @@
                   <h1 class='font-title'>Complete this form <br> for registration</h1>
 
                   <div class="login-form__wrap">
-                     <form id='regForm' class="font-text simple-block " action="#" method=''>
+                     <form id='regForm' class="font-text simple-block " action="#" method='POST'>
                         <label for="email">
                            Login:
                            <input type="text" id="login" name='login' required>
