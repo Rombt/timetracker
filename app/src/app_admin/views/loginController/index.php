@@ -4,25 +4,24 @@
 <main>
 
 	<div class="wrapper-section">
-		<div class="rmbt-full-width rmbt-main-section-full-width">
-			<section class="rmbt-container rmbt-main-section">
-				<div class="rmbt-main-section__row">
+		<div class="rmbt-full-width login-form-full-width">
+			<section class="rmbt-container login-form">
+				<div class="login-form__row">
 
-					<div class="rmbt-main-section__col">
+					<div class="login-form__col">
 
-						<div class="login-form-wrap">
-
-							<form action="#">
+						<div class="login-form__wrap">
+							<form id='regForm' class="font-text simple-block " action="#" method=''>
 								<label for="email">
 									Email:
-									<input type="text" id="email" name='email'>
+									<input type="text" id="email" name='email' required>
 								</label>
 								<label for="password">
 									Password:
-									<input type="text" id="password" name='password'>
+									<input type="text" id="password" name='password' required>
 								</label>
 
-								<button type='submit'> log In </button>
+								<button type='submit' class='font-text'> registration </button>
 
 							</form>
 						</div>
