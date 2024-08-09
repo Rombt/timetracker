@@ -4,14 +4,14 @@
 <main>
 
 	<div class="wrapper-section">
-		<div class="rmbt-full-width rmbt-main-section-full-width">
-			<section class="rmbt-container rmbt-main-section">
-				<div class="rmbt-main-section__row">
+		<div class="full-width login-form-full-width">
+			<section class="container login-form">
+				<div class="login-form__row">
 
-					<div class="rmbt-main-section__col">
+					<div class="login-form__col">
 
-						<div class="login-form-wrap">
-							<form action="#">
+						<div class="login-form__wrap">
+							<form id='regForm' action="#" method=''>
 								<label for="email">
 									Login:
 									<input type="text" id="login" name='login'>

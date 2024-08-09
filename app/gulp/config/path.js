@@ -87,7 +87,7 @@ export const path = {
           `!${this.src.php}/${this.srcPluginName}/**/*.php`,
           `!${this.src.php}/**/_*.php`, // these are drafts and files which marked for delete
           `!${this.src.php}/**/-*.php`, // these are files which queued up to develope
-          `!${this.src.php}/app_admin/**/*.*`, // for creating web app by MVC pattern
+          `!${this.src.php}/app_admin/**/*.{php,js}`, // for creating web app by MVC pattern
         ],
         plug: [
           `${this.src.php}/${this.srcPluginName}/**/*.php`,
@@ -113,6 +113,7 @@ export const path = {
         ],
         php: [
           `${this.src.php}/assets/styles/main-style${app.isSASS ? '.sass' : '.less'}`,
+          `${this.src.php}/app_admin/**/*${app.isSASS ? '.sass' : '.less'}`,
         ],
         plug: [
           `${this.src.plug}/assets/styles/main-style${app.isSASS ? '.sass' : '.less'}`,
@@ -211,7 +212,7 @@ export const path = {
           `${this.src.php}/assets/styles/libs/**/*.*`,
           `${this.src.php}/assets/js/libs/**/*.*`,
           `${this.src.php}/.htaccess`,
-          `${this.src.php}/app_admin/**/*.*`, // for creating web app by MVC pattern
+          `${this.src.php}/app_admin/**/*.{php,js}`, // for creating web app by MVC pattern
         ],
         plug: [
           `${this.src.php}/${this.srcPluginName}/README.md`,
