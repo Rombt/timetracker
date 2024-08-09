@@ -8,13 +8,23 @@
   }
   &__col {
     .col();
+    .size(6);
+
     margin: 0 auto;
+
+    h1 {
+      color: @color_text;
+      font-size: 24px;
+      margin-bottom: 50px;
+      line-height: 125%;
+    }
   }
   &__wrap {
     form {
       display: flex;
       flex-direction: column;
       width: 100%;
+      margin: 0 auto;
 
       .adaptive-prop(width, 400, 290);
 
