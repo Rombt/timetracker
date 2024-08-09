@@ -11,7 +11,7 @@
 					<div class="login-form__col">
 
 						<div class="login-form__wrap">
-							<form id='regForm' class="simple-block" action="#" method=''>
+							<form id='regForm' class="font-text simple-block " action="#" method=''>
 								<label for="email">
 									Login:
 									<input type="text" id="login" name='login'>
@@ -29,7 +29,7 @@
 									<input type="text" id="passwordConfirm" name='passwordConfirm'>
 								</label>
 
-								<button type='submit' class='font-title'> registration </button>
+								<button type='submit' class='font-text'> registration </button>
 
 							</form>
 						</div>

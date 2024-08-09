@@ -1,5 +1,5 @@
 <div class="cont-main-horizontal-menu">
-   <nav class="main-horizontal-menu">
+   <nav class="font-text main-horizontal-menu">
       <ul>
          <li><a href="<?php echo URL ?>">home</a></li>
          <li><a href="<?php echo URL ?>/support">support</a></li>
