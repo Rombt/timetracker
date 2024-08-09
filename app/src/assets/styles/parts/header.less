@@ -35,11 +35,20 @@
     .wrap-img {
       width: 60px;
       height: 60px;
+      flex-shrink: 0;
     }
   }
   .cont-main-horizontal-menu {
     .col();
     .size(6);
+
+    .icon-burger {
+      span,
+      &:after,
+      &:before {
+        background-color: #fff;
+      }
+    }
 
     nav {
       color: #fff !important;
@@ -49,6 +58,11 @@
         align-items: center;
         justify-content: space-between;
         padding: 0;
+
+        .to(768px,{
+          justify-content: start;
+        
+        });
 
         li {
           list-style: none;

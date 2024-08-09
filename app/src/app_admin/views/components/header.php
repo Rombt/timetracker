@@ -22,18 +22,13 @@
 					<section class="rmbt-container rmbt-top-string-header">
 						<div class="rmbt-top-string-header__row">
 
-							<!-- <a href="/"> -->
 							<a href="/" class="rmbt-top-string-header__col header-logo">
 								<div class="wrap-img">
 									<img src="<?php echo URL ?>/assets/img/header-logo_color_1.png" alt="">
 								</div>
 								<span>Time tracker</span>
 							</a>
-							<div class="rmbt-top-string-header__col header-menu">
-
-								<?php require_once TEMPLATE_PATH . '/components/mainMenu.php' ?>
-
-							</div>
+							<?php require_once TEMPLATE_PATH . '/components/mainMenu.php' ?>
 						</div>
 					</section>
 				</div>

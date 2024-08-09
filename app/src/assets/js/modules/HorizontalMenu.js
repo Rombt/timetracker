@@ -146,8 +146,6 @@ class HorizontalMenu {
 
     this.lastWidthWindow = window.innerWidth;
 
-    console.log('**************** = ');
-
     this.forEachMenu();
     this.listenClick();
     this.listenKeydown();
