@@ -3,36 +3,38 @@
 
 <main>
 
-	<div class="wrapper-section">
-		<div class="rmbt-full-width login-form-full-width">
-			<section class="rmbt-container login-form">
-				<div class="login-form__row">
+   <div class="wrapper-section">
+      <div class="rmbt-full-width login-form-full-width">
+         <section class="rmbt-container login-form">
+            <div class="login-form__row">
 
-					<div class="login-form__col">
+               <div class="login-form__col">
 
-						<div class="login-form__wrap">
-							<form id='regForm' class="font-text simple-block " action="#" method=''>
-								<label for="email">
-									Email:
-									<input type="text" id="email" name='email' required>
-								</label>
-								<label for="password">
-									Password:
-									<input type="text" id="password" name='password' required>
-								</label>
+                  <h1 class='font-title'>Complete this form <br> for log in</h1>
 
-								<button type='submit' class='font-text'> registration </button>
+                  <div class="login-form__wrap">
+                     <form id='regForm' class="font-text simple-block " action="#" method=''>
+                        <label for="email">
+                           Email:
+                           <input type="text" id="email" name='email' required>
+                        </label>
+                        <label for="password">
+                           Password:
+                           <input type="text" id="password" name='password' required>
+                        </label>
 
-							</form>
-						</div>
+                        <button type='submit' class='font-text'> registration </button>
+
+                     </form>
+                  </div>
 
 
 
-					</div>
-				</div>
-			</section>
-		</div>
-	</div>
+               </div>
+            </div>
+         </section>
+      </div>
+   </div>
 
 </main>
 
