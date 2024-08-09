@@ -49,6 +49,7 @@ export const path = {
       styles: [
         `${this.src.php}/assets/styles/**/*.less`,
         `${this.src.php}/assets/styles/**/*.scss`,
+        `${this.src.php}/app_admin/views/**/*.less`,
         `${this.src.php}/${this.srcPluginName}/assets/styles/**/*.less`,
         `${this.src.php}/${this.srcPluginName}/inc/gutenberg/blocks/**/*.css`,
       ],
