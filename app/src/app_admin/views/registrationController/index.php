@@ -10,28 +10,32 @@
 
 					<div class="login-form__col">
 
+						<h1 class='font-title'>Complete this form <br> for registration</h1>
+
 						<div class="login-form__wrap">
-							<form id='regForm' class="simple-block" action="#" method=''>
+							<form id='regForm' class="font-text simple-block"
+								action="<?php echo URL ?>/registration/formProcessing" method='POST'>
 								<label for="email">
 									Login:
-									<input type="text" id="login" name='login'>
+									<input type="text" id="login" name='login' required>
 								</label>
 								<label for="email">
 									Email:
-									<input type="text" id="email" name='email'>
+									<input type="email" id="email" name='email' required>
 								</label>
 								<label for="password">
 									Password:
-									<input type="text" id="password" name='password'>
+									<input type="password" id="password" name='password' required>
 								</label>
-								<label for="password">
+								<label for="passwordConfirm">
 									Password confirm:
-									<input type="text" id="passwordConfirm" name='passwordConfirm'>
+									<input type="password" id="passwordConfirm" name='passwordConfirm' required>
 								</label>
 
-								<button type='submit' class='font-title'> registration </button>
-
+								<button id='submitRegForm' type='submit' class='font-text' disabled> registration </button>
+								<div class="err-conf-pass">passwords does not match</div>
 							</form>
+
 						</div>
 
 

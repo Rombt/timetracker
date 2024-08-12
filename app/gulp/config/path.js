@@ -22,11 +22,7 @@ export const path = {
   ThemeName: THEME_NAME,
   srcPluginName: 'core-plugin', // set name your plugin for development version
   RootPath: ROOT_PATH,
-  proxy: [
-    `http://web/timetracker/`,
-    `http://web/timetracker/`,
-    // `http://web/impex-rombt/`,
-  ],
+  proxy: [`http://timetracker/`, `http://web/timetracker/`],
 
   get src() {
     return {

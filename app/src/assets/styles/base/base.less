@@ -125,6 +125,37 @@ body.rmbt-lock {
   color: @color_text;
 }
 
+.error-box {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  min-width: 80%;
+  max-width: @_width_container;
+  min-height: 30%;
+  padding: 20px 20px 20px 20px;
+
+  background-color: @color_blocks_background_error;
+  color: @color_text_error;
+  border-radius: @blocks_border_radius;
+  border: 1px solid @color_blocks_border_error;
+
+  font-size: 14px !important;
+  color: @color_text_error !important;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  display: none;
+
+  p {
+    text-align: left;
+    margin: 5px 0px 5px 0px;
+  }
+}
+
 .font-title {
   color: #fff;
   font-size: 22px;
@@ -133,4 +164,11 @@ body.rmbt-lock {
   color: #fff;
   text-align: center;
   letter-spacing: 0.2em;
+}
+
+.font-text {
+  color: @color_text;
+  font-size: 18px;
+
+  font-family: 'RobotoFlex';
 }
