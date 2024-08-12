@@ -7,7 +7,7 @@ class Database {
 	private $db_name = DB_NAME;
 	private $username = DB_USER;
 	private $password = DB_PASS;
-	public $bd = null;
+	public static $bd = null;
 
 
 	public function __construct() {
