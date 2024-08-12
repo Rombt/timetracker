@@ -3,21 +3,8 @@
 class workareaSeeder {
 	private $bd;
 
-	public function __construct( $pdo ) {
+	public function __construct() {
 		$this->bd = Database::$bd;
-
-		// try {
-		// 	$sth = $this->database->bd->prepare( "INSERT INTO users (username, email, password, role) VALUES (:username, :email, :password, :role)" );
-		// 	$sth->execute( $data );
-		// 	return $this->database->bd->lastInsertId();
-		// } catch (PDOException $error) {
-		// 	return $error;
-		// }
-
-
-
-
-
 	}
 
 	public function seedTimelogs( $numUsers, $numRecordsPerUser = 5 ) {

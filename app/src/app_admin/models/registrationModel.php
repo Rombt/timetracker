@@ -10,9 +10,9 @@ class registrationModel extends Model {
 
 
 		try {
-			$sth = $this->database->bd->prepare( "INSERT INTO users (username, email, password, role) VALUES (:username, :email, :password, :role)" );
+			$sth = Database::$bd->prepare( "INSERT INTO users (username, email, password, role) VALUES (:username, :email, :password, :role)" );
 			$sth->execute( $data );
-			return $this->database->bd->lastInsertId();
+			return Database::$bd->lastInsertId();
 		} catch (PDOException $error) {
 			return $error;
 		}

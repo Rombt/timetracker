@@ -18,8 +18,8 @@ class Controller {
 		}
 
 		$this->name_seeder = $this->getBaseNameByController() . 'Seeder';
-		if ( file_exists( DIR_PATH_APP_ADMIN . '/models/seeders' . $this->name_seeder . '.php' ) ) {
-			require_once DIR_PATH_APP_ADMIN . '/models/seeders' . $this->name_seeder . '.php';
+		if ( file_exists( DIR_PATH_APP_ADMIN . '/models/seeders/' . $this->name_seeder . '.php' ) ) {
+			require_once DIR_PATH_APP_ADMIN . '/models/seeders/' . $this->name_seeder . '.php';
 			$this->seeder = new $this->name_seeder;
 		}
 	}
