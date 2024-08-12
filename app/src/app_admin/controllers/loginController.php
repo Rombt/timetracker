@@ -19,6 +19,7 @@ class loginController extends Controller {
 
 
 			if ( $user = $this->model->authorization( $data ) ) {
+
 				User::login( $user );
 				echo json_encode( [ 'redirectUrl' => URL . '/workarea/' ] );
 			} else {

@@ -3,12 +3,12 @@
 class User {
 
 
-	static function login( $data ) {
+	static function login( $user ) {
 
 		$_SESSION['LOGIN'] = true;
-		$_SESSION['USER_ID'] = $data['id'];
-		$_SESSION['USER_NAME'] = $data['username'];
-		$_SESSION['USER_ROLE'] = $data['role'];
+		$_SESSION['USER_ID'] = $user['id'];
+		$_SESSION['USER_NAME'] = $user['username'];
+		$_SESSION['USER_ROLE'] = $user['role'];
 	}
 
 	static function isLogin() {
