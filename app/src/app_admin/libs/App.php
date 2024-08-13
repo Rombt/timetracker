@@ -2,7 +2,7 @@
 
 class App {
 	public function __construct() {
-		session_start();
+
 
 		$get_url = isset( $_GET['url'] ) ? htmlspecialchars( $_GET['url'] ) : false;
 		if ( $get_url ) {

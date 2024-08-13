@@ -15,7 +15,7 @@ class loginModel extends Model {
 		// $sth = $this->database->bd->prepare( "SELECT id, username, role FROM users WHERE email = :email AND password = :password" );
 		// $sth->execute( [ ':email' => $data['email'], ':password' => $password ] );
 
-		$sth = $this->database->bd->prepare( "SELECT id, username, role, password FROM users WHERE email = :email" );
+		$sth = Database::$bd->prepare( "SELECT id, username, role, password FROM users WHERE email = :email" );
 		$sth->execute( [ ':email' => $data['email'] ] );
 
 		$user = $sth->fetch( PDO::FETCH_ASSOC );

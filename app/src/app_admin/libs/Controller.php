@@ -11,10 +11,13 @@ class Controller {
 		$this->view = new View;
 
 
+
+
 		$this->name_model = $this->getBaseNameByController() . 'Model';
 		if ( file_exists( DIR_PATH_APP_ADMIN . '/models/' . $this->name_model . '.php' ) ) {
 			require_once DIR_PATH_APP_ADMIN . '/models/' . $this->name_model . '.php';
 			$this->model = new $this->name_model;
+
 		}
 
 		$this->name_seeder = $this->getBaseNameByController() . 'Seeder';
@@ -22,6 +25,7 @@ class Controller {
 			require_once DIR_PATH_APP_ADMIN . '/models/seeders/' . $this->name_seeder . '.php';
 			$this->seeder = new $this->name_seeder;
 		}
+
 	}
 
 	public function index() {

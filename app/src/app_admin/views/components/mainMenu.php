@@ -6,6 +6,9 @@
 
 			<?php if ( User::isLogin() ) : ?>
 				<li><a href="<?php echo URL ?>/workarea">work area</a></li>
+				<?php if ( User::isAdmin() ) : ?>
+					<li><a href="<?php echo URL ?>/users">users management</a></li>
+				<?php endif ?>
 				<li><a href="<?php echo URL ?>/login/logout">logOut</a></li>
 				<li><a href="<?php echo URL ?>/profile">profile</a></li>
 			<?php else : ?>

@@ -1,10 +1,8 @@
 <?php
 
 class workareaSeeder {
-	private $bd;
 
 	public function __construct() {
-		$this->bd = Database::$bd;
 	}
 
 	public function seedTimelogs( $numUsers, $numRecordsPerUser = 5 ) {
@@ -14,15 +12,15 @@ class workareaSeeder {
             INSERT INTO timelogs (user_id, hours, day, comment)
             VALUES (:user_id, :hours, :day, :comment)
         ";
-		$stmt = $this->bd->prepare( $insertSQL );
+		$sth = Database::$bd->prepare( $insertSQL );
 
 		foreach ( $userIds as $userId ) {
 			for ( $i = 0; $i < $numRecordsPerUser; $i++ ) {
-				$hours = rand( 1, 8 ); // Случайное количество часов от 1 до 8
-				$day = $this->randomDate( '2023-01-01', '2023-12-31' ); // Случайная дата в 2023 году
-				$comment = $this->randomComment(); // Случайный комментарий
+				$hours = rand( 1, 8 );
+				$day = $this->randomDate( '2024-01-01', '2024-12-31' );
+				$comment = $this->randomComment();
 
-				$stmt->execute( [ 
+				$sth->execute( [ 
 					':user_id' => $userId,
 					':hours' => $hours,
 					':day' => $day,
@@ -33,10 +31,10 @@ class workareaSeeder {
 	}
 
 	private function getUserIds( $limit ) {
-		$stmt = $this->bd->prepare( "SELECT id FROM users LIMIT :limit" );
-		$stmt->bindValue( ':limit', $limit, PDO::PARAM_INT );
-		$stmt->execute();
-		return $stmt->fetchAll( PDO::FETCH_COLUMN );
+		$sth = Database::$bd->prepare( "SELECT id FROM users LIMIT :limit" );
+		$sth->bindValue( ':limit', $limit, PDO::PARAM_INT );
+		$sth->execute();
+		return $sth->fetchAll( PDO::FETCH_COLUMN );
 	}
 
 	private function randomDate( $startDate, $endDate ) {

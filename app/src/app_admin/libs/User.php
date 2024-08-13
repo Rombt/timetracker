@@ -12,17 +12,19 @@ class User {
 	}
 
 	static function isLogin() {
-		if ( isset( $_SESSION['LOGIN'] ) && $_SESSION['LOGIN'] ) {
+		if ( isset( $_SESSION['LOGIN'] ) ) {
 			return true;
 		} else {
 			return false;
 		}
 	}
 	static function isAdmin() {
+
+
 		if ( isset( $_SESSION['USER_ROLE'] ) && $_SESSION['USER_ROLE'] === ADMIN_ROLE ) {
 			return true;
 		} else {
-			return true;
+			return false;
 		}
 	}
 	static function getID() {
@@ -35,6 +37,11 @@ class User {
 	static function logOut() {
 		session_destroy();
 	}
+
+
+
+
+
 
 
 }

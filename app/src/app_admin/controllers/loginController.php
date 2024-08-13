@@ -15,6 +15,7 @@ class loginController extends Controller {
 		$data['email'] = htmlspecialchars( $_POST['email'] );
 		$data['password'] = htmlspecialchars( $_POST['password'] );
 
+
 		if ( $this->model->emailExist( $data['email'] ) ) {
 
 
@@ -29,6 +30,10 @@ class loginController extends Controller {
 			}
 
 
+		} else {
+			http_response_code( 401 );
+			echo json_encode( [ 'error' => 'There is no user with this email' ] );
+			die;
 		}
 	}
 

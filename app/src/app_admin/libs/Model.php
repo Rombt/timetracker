@@ -19,7 +19,7 @@ class Model {
 
 
 	public function emailExist( $email ) {
-		$sth = $this->database->bd->prepare( "SELECT id FROM users WHERE email = :email" );
+		$sth = Database::$bd->prepare( "SELECT id FROM users WHERE email = :email" );
 		$sth->execute( [ ':email' => $email ] );
 
 		if ( $sth->rowCount() > 0 ) {

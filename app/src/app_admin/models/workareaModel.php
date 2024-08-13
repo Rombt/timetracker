@@ -6,23 +6,21 @@ class workareaModel extends Model {
 
 	}
 
-	// public function seed( $data ) {
+	public function getAllTimelogs() {
+		$sth = Database::$bd->prepare( "
+			SELECT timelogs.id, users.username, timelogs.hours, timelogs.day, timelogs.comment
+			FROM timelogs
+			JOIN users ON timelogs.user_id = users.id
+		" );
+		$sth->execute();
+		return $sth->fetchAll( PDO::FETCH_ASSOC );
+	}
 
-
-	// try {
-	// 	$sth = $this->database->bd->prepare( "INSERT INTO users (username, email, password, role) VALUES (:username, :email, :password, :role)" );
-	// 	$sth->execute( $data );
-	// 	return $this->database->bd->lastInsertId();
-	// } catch (PDOException $error) {
-	// 	return $error;
-	// }
-
-	// $pdo = new PDO( 'mysql:host=localhost;dbname=your_database_name', 'username', 'password' );
-	// $seeder = new workareaSeeder( $pdo );
-
-
-
-	// }
-
+	public function getTimelogsByUser( $userId ) {
+		$sth = Database::$bd->prepare( "SELECT * FROM timelogs WHERE user_id = :user_id" );
+		$sth->bindValue( ':user_id', $userId, PDO::PARAM_INT );
+		$sth->execute();
+		return $sth->fetchAll( PDO::FETCH_ASSOC );
+	}
 
 }
