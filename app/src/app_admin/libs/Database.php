@@ -59,7 +59,7 @@ class Database {
 					id INT AUTO_INCREMENT PRIMARY KEY,
 					user_id INT NOT NULL,
 					hours INT NOT NULL,
-					day DATE NOT NULL,
+					day DATE NOT NULL UNIQUE,
 					comment TEXT,
 					FOREIGN KEY (user_id) REFERENCES users(id)
 				)";

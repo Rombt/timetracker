@@ -38,6 +38,25 @@ class User {
 		session_destroy();
 	}
 
+	static function getUserIdByUsername( $username ) {
+		$sth = Database::$bd->prepare( "
+        SELECT id 
+        FROM users 
+        WHERE username = :username
+        LIMIT 1
+    " );
+
+		$sth->bindValue( ':username', $username, PDO::PARAM_STR );
+		$sth->execute();
+
+		$user = $sth->fetch( PDO::FETCH_ASSOC );
+		if ( $user ) {
+			return $user['id'];
+		} else {
+			return false;
+		}
+	}
+
 
 
 

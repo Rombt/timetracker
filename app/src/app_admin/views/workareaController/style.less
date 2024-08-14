@@ -21,17 +21,118 @@
     }
   }
   &__col {
+    .icon-edit-entry {
+      text-decoration: none;
+      color: inherit;
+      padding: 6px 8px 6px 8px;
+      font-size: 11px;
+      color: #8282a8;
+      border: 1px solid #a1a1d7;
+      border-radius: 5px;
+      text-transform: uppercase;
+    }
+
     table {
+      position: relative;
       margin: 0 auto;
+
+      width: 805px;
+
       td,
       th {
         text-align: center;
-        padding: 10px 20px 10px 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        .adaptive-prop(padding-left, 20, 5);
+        .adaptive-prop(padding-right, 20, 5);
+
         border: 1px solid @color_blocks_border_lite;
       }
 
       tr {
       }
+
+      .error-box {
+        top: 20px;
+        transform: translate(-50%, 0%);
+      }
+    }
+
+    .popup {
+      z-index: 1;
+      &__body {
+        max-width: 460px;
+
+        margin-top: 100px;
+      }
+      &__content {
+      }
+      &__close-window {
+      }
+      &__title {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 18px;
+      }
+      &__text {
+        #addEntryForm,
+        #editEntryForm {
+          display: flex;
+          flex-direction: column;
+          row-gap: 20px;
+
+          input {
+            max-width: 205px;
+            .to(390px,{
+              .adaptive-prop(width, 205, 70);
+            });
+          }
+
+          label {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            column-gap: 10px;
+          }
+
+          textarea {
+            resize: vertical;
+            max-width: 205px;
+            min-height: 75px;
+            max-height: 150px;
+          }
+
+          button {
+            padding: 10px 0px 10px 0px;
+            text-transform: uppercase;
+            font-size: 12px;
+            width: 80%;
+            margin: 0 auto;
+            border-radius: @blocks_border_radius;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    .font-text {
+      .adaptive-prop(font-size, 18, 14);
+    }
+
+    .add-entry-wrap {
+      width: 805px;
+      margin: 0 auto 20px auto;
+      text-align: right;
+
+      a {
+        font-size: 14px;
+        padding: 10px 10px 10px 10px;
+
+        color: @color_text;
+        border: 1px solid @color_blocks_border;
+        background-color: @color_blocks_background;
+      }
+    }
+    .simple-block {
     }
   }
 }
