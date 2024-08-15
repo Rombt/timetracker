@@ -48,8 +48,6 @@ document.addEventListener('DOMContentLoaded', function () {
           return response.json();
         })
         .then(data => {
-          //  console.log('data = ', data);
-
           entryData = data[0];
           editWinTitle.innerText = `Editing entry ID:  ${entryData.id}`;
           fieldHours.value = entryData.hours;
@@ -105,6 +103,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
     addWin.classList.remove('open');
     document.querySelector('body').classList.remove('lock');
+
+    const tr = document.createElement('tr');
+    const arr_fields = Object.entries(data)
+      .filter(([key, value]) => key !== 'user_name')
+      .map(([key, value]) => value);
+
+    arr_fields.push(iconAddEntry.cloneNode(true));
+
+    arr_fields.forEach(field => {
+      const td = document.createElement('td');
+      td.innerHtml = field;
+      tr.append(td);
+    });
+
+    workAreaTable.querySelector('tbody').append(tr);
 
     fetch(addEntryForm.action, {
       method: addEntryForm.method,
