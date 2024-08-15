@@ -22,6 +22,7 @@
   }
   &__col {
     .icon-edit-entry {
+      display: block;
       text-decoration: none;
       color: inherit;
       padding: 6px 8px 6px 8px;
@@ -121,7 +122,6 @@
     .add-entry-wrap {
       width: 805px;
       margin: 0 auto 20px auto;
-      text-align: right;
 
       a {
         font-size: 14px;
@@ -130,6 +130,10 @@
         color: @color_text;
         border: 1px solid @color_blocks_border;
         background-color: @color_blocks_background;
+
+        max-width: 120px;
+        text-align: center;
+        margin: 0 0 0 auto;
       }
     }
     .simple-block {

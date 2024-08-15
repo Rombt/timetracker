@@ -21,28 +21,20 @@
 
                <div class="work-area__col">
 
-
-                  <?php
-
-						// echo "<pre>";
-						// var_dump( $this->arrResults['USERS'] );
-						// echo "</pre>";
-						
-						?>
-
-
                   <?php if ( count( $this->arrResults['USERS'] ) ) : ?>
 
                   <table class='simple-block font-text'>
                      <tr>
                         <th>User name</th>
                         <th>Something about this user</th>
+                        <th>Something very important yet about this user</th>
                         <th>Reset password</th>
                      </tr>
 
                      <?php foreach ( $this->arrResults['USERS'] as $str ) : ?>
                      <tr>
                         <td><?php echo $str['username']; ?></td>
+                        <td class='about-user'></td>
                         <td class='about-user'></td>
                         <td><a href='<?php echo URL ?>/users/resetpassword/<?php echo $str['id'] ?>'
                               class='reset-password'>Reset password</a>

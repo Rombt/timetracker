@@ -70,6 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
     formFieldHours.innerText = data.hours;
     formFieldComment.innerText = data.comment;
     editWin.classList.remove('open');
+    document.querySelector('body').classList.remove('lock');
 
     fetch(editEntryForm.action, {
       method: editEntryForm.method,
@@ -103,6 +104,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const data = Object.fromEntries(formData.entries());
 
     addWin.classList.remove('open');
+    document.querySelector('body').classList.remove('lock');
 
     fetch(addEntryForm.action, {
       method: addEntryForm.method,
