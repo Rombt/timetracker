@@ -64,7 +64,7 @@ class Controller {
 		if ( empty( $email ) || ! filter_var( $email, FILTER_VALIDATE_EMAIL ) || strlen( $email ) > 255 ) {
 			return false;
 		}
-		// проверка уникальности лучше организовать на стороне SQL но можно и здесь
+		// проверка уникальности лучше организовать на стороне SQL, но можно и здесь
 		// elseif (!$this->model->emailExist( $email )){
 		// 	return false;
 		// }

@@ -38,5 +38,15 @@ class Model {
 			return false;
 		}
 	}
+	public function dataExist( $data ) {
+		$sth = Database::$bd->prepare( "SELECT id FROM users WHERE day = :day" );
+		$sth->execute( [ ':day' => $data ] );
+
+		if ( $sth->rowCount() > 0 ) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 
 }

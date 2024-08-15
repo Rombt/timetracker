@@ -113,7 +113,7 @@ class workareaController extends Controller {
 
 			die;
 		}
-		// echo json_encode( [ 'success' => 'Entry was insert' ] );
+		echo json_encode( [ 'success' => 'Entry was insert' ] );
 		die;
 
 

@@ -54,15 +54,17 @@ class Database {
 				)";
 			self::$bd->exec( $createUsersTableSQL );
 
+			// SQL для создания таблицы
 			$createTimelogsTableSQL = "
 				CREATE TABLE IF NOT EXISTS timelogs (
 					id INT AUTO_INCREMENT PRIMARY KEY,
 					user_id INT NOT NULL,
 					hours INT NOT NULL,
-					day DATE NOT NULL UNIQUE,
+					day DATE NOT NULL,
 					comment TEXT,
 					FOREIGN KEY (user_id) REFERENCES users(id)
-				)";
+				) ENGINE=InnoDB;
+				";
 			self::$bd->exec( $createTimelogsTableSQL );
 
 		} catch (PDOException $exception) {
