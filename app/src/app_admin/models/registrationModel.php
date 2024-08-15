@@ -8,7 +8,6 @@ class registrationModel extends Model {
 
 	public function registration( $data ) {
 
-
 		try {
 			$sth = Database::$bd->prepare( "INSERT INTO users (username, email, password, role) VALUES (:username, :email, :password, :role)" );
 			$sth->execute( $data );

@@ -6,6 +6,7 @@ class Controller {
 	protected $model;
 	protected $name_seeder;
 	protected $seeder;
+	protected $errors = [];
 
 	public function __construct() {
 		$this->view = new View;
@@ -33,6 +34,14 @@ class Controller {
 		$first_index = strpos( $name, 'Controller' );
 		return substr( $name, 0, $first_index );
 	}
+
+
+
+	/**
+	 * 	Валидация
+	 * 	можно сделать по разному по этому привожу несколько вариантов 
+	 * 
+	 */
 
 
 
@@ -64,7 +73,6 @@ class Controller {
 		}
 	}
 
-
 	public function validatePassword( $password ) {
 
 		if ( empty( $password ) || strlen( $password ) < 8 ) {
@@ -79,7 +87,65 @@ class Controller {
 		}
 	}
 
+	protected function isValidDateFormat( $date ) {
+		$regex = '/^\d{4}-\d{2}-\d{2}$/';
+		if ( preg_match( $regex, $date ) ) {
+			$dateParts = explode( '-', $date );
+			return checkdate( $dateParts[1], $dateParts[2], $dateParts[0] );
+		}
 
+		return false;
+	}
+
+	protected function isValidIdFormat( $id ) {
+		if ( ! is_numeric( $id ) ) {
+			return false;
+		}
+		return true;
+	}
+
+	protected function isValidHoursFormat( $hours ) {
+		if ( ! is_numeric( $hours ) || $hours > 24 ) {
+			return false;
+		}
+		return true;
+	}
+
+
+
+	public function validateForm( $data ) {
+
+		if ( empty( $data['username'] ) ) {
+			$this->errors['username'] = 'Login is required.';
+		} elseif ( ! preg_match( '/^[a-zA-Z0-9_]{3,20}$/', $data['username'] ) ) {
+			$this->errors['username'] = 'Login must be 3-20 characters long and contain only letters, numbers, and underscores.';
+		}
+
+		if ( empty( $data['email'] ) ) {
+			$this->errors['email'] = 'Email is required.';
+		} elseif ( ! filter_var( $data['email'], FILTER_VALIDATE_EMAIL ) ) {
+			$this->errors['email'] = 'Invalid email format.';
+		}
+
+		if ( empty( $data['password'] ) ) {
+			$this->errors['password'] = 'Password is required.';
+		} elseif ( strlen( $data['password'] ) < 6 ) {
+			$this->errors['password'] = 'Password must be at least 6 characters long.';
+		}
+
+		if ( empty( $data['passwordConfirm'] ) ) {
+			$this->errors['passwordConfirm'] = 'Password confirmation is required.';
+		} elseif ( $data['password'] !== $data['passwordConfirm'] ) {
+			$this->errors['passwordConfirm'] = 'Passwords do not match.';
+		}
+
+		if ( ! empty( $this->errors ) ) {
+			return false;
+		}
+
+		return true;
+
+	}
 
 
 

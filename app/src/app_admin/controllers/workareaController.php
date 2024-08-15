@@ -47,14 +47,26 @@ class workareaController extends Controller {
 
 		} elseif ( $_POST['action'] === 'updateEntry' ) {
 
+
 			$dataEntry['entry_id'] = htmlspecialchars( $_POST['entry_id'] );
+			if ( ! $this->isValidIdFormat( $dataEntry['entry_id'] ) ) {
+				http_response_code( 500 );
+				echo json_encode( [ 'error' => "ID не соответствует формату" ] );
+				die;
+			}
+
 			$dataEntry['hours'] = htmlspecialchars( $_POST['hours'] );
+			if ( ! $this->isValidHoursFormat( $dataEntry['hours'] ) ) {
+				http_response_code( 500 );
+				echo json_encode( [ 'error' => "Количество часов должны быть числами или оно слишком большое" ] );
+				die;
+			}
+
 			$dataEntry['comment'] = htmlspecialchars( $_POST['comment'] );
 
 			$resultUpdate = $this->model->updateEntry( $dataEntry );
 
 			if ( $resultUpdate instanceof PDOException ) {
-
 				http_response_code( 500 );
 				echo json_encode( [ 'error' => $resultUpdate->getMessage() ] );
 				die;
@@ -62,7 +74,6 @@ class workareaController extends Controller {
 				echo json_encode( [ 'success' => 'Entry was updated' ] );
 				die;
 			}
-
 		}
 
 	}
@@ -76,9 +87,9 @@ class workareaController extends Controller {
 		$dataEntry['comment'] = htmlspecialchars( $_POST['comment'] );
 		$dataEntry['user_id'] = User::getUserIdByUsername( $dataEntry['user_name'] );
 
-		if ( ! is_numeric( $dataEntry['hours'] ) ) {
+		if ( ! is_numeric( $dataEntry['hours'] ) || $dataEntry['hours'] > 24 ) {
 			http_response_code( 500 );
-			echo json_encode( [ 'error' => "ID пользователя и количество часов должны быть числами." ] );
+			echo json_encode( [ 'error' => "Количество часов должны быть числами или оно слишком большое" ] );
 			die;
 		}
 
@@ -88,10 +99,7 @@ class workareaController extends Controller {
 			die;
 		}
 
-
-
 		$resultInsert = $this->model->insertEntry( $dataEntry );
-
 
 		if ( $resultInsert->getCode() === '23000' ) {
 			http_response_code( 409 );
@@ -102,16 +110,7 @@ class workareaController extends Controller {
 			die;
 		}
 
-
 	}
 
-	protected function isValidDateFormat( $date ) {
-		$regex = '/^\d{4}-\d{2}-\d{2}$/';
-		if ( preg_match( $regex, $date ) ) {
-			$dateParts = explode( '-', $date );
-			return checkdate( $dateParts[1], $dateParts[2], $dateParts[0] );
-		}
 
-		return false;
-	}
 }
