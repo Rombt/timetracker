@@ -61,10 +61,6 @@ class workareaModel extends Model {
 		$sth->bindValue( ':day', $dataEntry['day'], PDO::PARAM_STR );
 		$sth->bindValue( ':comment', $dataEntry['comment'], PDO::PARAM_STR );
 
-
-		var_dump( $sth->execute() );
-
-
 		try {
 			return $sth->execute();
 		} catch (PDOException $error) {
