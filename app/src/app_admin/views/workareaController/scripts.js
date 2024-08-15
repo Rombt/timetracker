@@ -111,9 +111,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
     arr_fields.push(iconAddEntry.cloneNode(true));
 
+    console.log('arr_fields = ', arr_fields);
+
     arr_fields.forEach(field => {
       const td = document.createElement('td');
-      td.innerHtml = field;
+
+      if (typeof field === 'string') {
+        td.appendChild(document.createTextNode(field));
+      } else {
+        td.appendChild(field);
+      }
+
       tr.append(td);
     });
 
@@ -135,12 +143,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         return response.json();
       })
-      .then(data => {
-        // entryData = data[0];
-        // editWinTitle.innerText = `Editing entry ID:  ${entryData.id}`;
-        // fieldHours.value = entryData.hours;
-        // fieldComments.value = entryData.comment;
-      })
+      .then(data => {})
       .catch(error => {});
   });
 });
