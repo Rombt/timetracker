@@ -28,5 +28,15 @@ class Model {
 			return false;
 		}
 	}
+	public function userNameExist( $user_name ) {
+		$sth = Database::$bd->prepare( "SELECT id FROM users WHERE username = :username" );
+		$sth->execute( [ ':email' => $user_name ] );
+
+		if ( $sth->rowCount() > 0 ) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 
 }
