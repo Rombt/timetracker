@@ -50,8 +50,8 @@ class Controller {
 			$errors['username'] = "Username must be between 3 and 255 characters.";
 		}
 		// проверка уникальности лучше организовать на стороне SQL но можно и здесь
-		// elseif (!$this->model->userNameExist( $user_name )){
-		// 	return false;
+		// elseif ($this->model->userNameExist( $user_name )){
+		// 	return 'userNameExist';
 		// }
 		else {
 			return true;
@@ -65,8 +65,8 @@ class Controller {
 			return false;
 		}
 		// проверка уникальности лучше организовать на стороне SQL, но можно и здесь
-		// elseif (!$this->model->emailExist( $email )){
-		// 	return false;
+		// elseif ($this->model->emailExist( $email )){
+		// 	return 'emailExist';
 		// }
 		else {
 			return true;
@@ -93,7 +93,6 @@ class Controller {
 			$dateParts = explode( '-', $date );
 			return checkdate( $dateParts[1], $dateParts[2], $dateParts[0] );
 		}
-
 		return false;
 	}
 

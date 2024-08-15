@@ -87,17 +87,26 @@ class workareaController extends Controller {
 		$dataEntry['comment'] = htmlspecialchars( $_POST['comment'] );
 		$dataEntry['user_id'] = User::getUserIdByUsername( $dataEntry['user_name'] );
 
-		if ( ! is_numeric( $dataEntry['hours'] ) || $dataEntry['hours'] > 24 ) {
+		if ( $this->model->dataExist( $dataEntry['day'], $dataEntry['user_id'] ) ) {
 			http_response_code( 500 );
-			echo json_encode( [ 'error' => "Количество часов должны быть числами или оно слишком большое" ] );
+			echo json_encode( [ 'error' => "Такая дата уже существует" ] );
 			die;
 		}
+
 
 		if ( ! $this->isValidDateFormat( $dataEntry['day'] ) ) {
 			http_response_code( 500 );
 			echo json_encode( [ 'error' => "Неправильный формат даты. Дата должна быть в формате 'YYYY-MM-DD'." ] );
 			die;
 		}
+
+
+		if ( ! is_numeric( $dataEntry['hours'] ) || $dataEntry['hours'] > 24 ) {
+			http_response_code( 500 );
+			echo json_encode( [ 'error' => "Количество часов должны быть числами или оно слишком большое" ] );
+			die;
+		}
+
 
 		$resultInsert = $this->model->insertEntry( $dataEntry );
 

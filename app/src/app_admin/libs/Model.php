@@ -22,7 +22,9 @@ class Model {
 		$sth = Database::$bd->prepare( "SELECT id FROM users WHERE email = :email" );
 		$sth->execute( [ ':email' => $email ] );
 
-		if ( $sth->rowCount() > 0 ) {
+		if ( $sth instanceof PDOException ) {
+			return $sth;
+		} elseif ( $sth->rowCount() > 0 ) {
 			return true;
 		} else {
 			return false;
@@ -32,20 +34,20 @@ class Model {
 		$sth = Database::$bd->prepare( "SELECT id FROM users WHERE username = :username" );
 		$sth->execute( [ ':email' => $user_name ] );
 
-		if ( $sth->rowCount() > 0 ) {
-			return true;
-		} else {
+		if ( $sth instanceof PDOException || $sth->rowCount() === 0 ) {
 			return false;
+		} else {
+			return true;
 		}
 	}
-	public function dataExist( $data ) {
-		$sth = Database::$bd->prepare( "SELECT id FROM users WHERE day = :day" );
-		$sth->execute( [ ':day' => $data ] );
+	public function dataExist( $date, $user_id ) {
+		$sth = Database::$bd->prepare( "SELECT id FROM timelogs WHERE user_id = :user_id AND day = :day" );
+		$sth->execute( [ ':user_id' => $user_id, ':day' => $date ] );
 
-		if ( $sth->rowCount() > 0 ) {
-			return true;
-		} else {
+		if ( $sth instanceof PDOException || $sth->rowCount() === 0 ) {
 			return false;
+		} else {
+			return true;
 		}
 	}
 

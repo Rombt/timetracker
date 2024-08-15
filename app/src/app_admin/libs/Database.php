@@ -54,7 +54,6 @@ class Database {
 				)";
 			self::$bd->exec( $createUsersTableSQL );
 
-			// SQL для создания таблицы
 			$createTimelogsTableSQL = "
 				CREATE TABLE IF NOT EXISTS timelogs (
 					id INT AUTO_INCREMENT PRIMARY KEY,

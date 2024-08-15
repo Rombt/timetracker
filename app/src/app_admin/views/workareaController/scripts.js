@@ -104,29 +104,6 @@ document.addEventListener('DOMContentLoaded', function () {
     addWin.classList.remove('open');
     document.querySelector('body').classList.remove('lock');
 
-    const tr = document.createElement('tr');
-    const arr_fields = Object.entries(data)
-      .filter(([key, value]) => key !== 'user_name')
-      .map(([key, value]) => value);
-
-    arr_fields.push(iconAddEntry.cloneNode(true));
-
-    console.log('arr_fields = ', arr_fields);
-
-    arr_fields.forEach(field => {
-      const td = document.createElement('td');
-
-      if (typeof field === 'string') {
-        td.appendChild(document.createTextNode(field));
-      } else {
-        td.appendChild(field);
-      }
-
-      tr.append(td);
-    });
-
-    workAreaTable.querySelector('tbody').append(tr);
-
     fetch(addEntryForm.action, {
       method: addEntryForm.method,
       headers: {
@@ -143,7 +120,26 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         return response.json();
       })
-      .then(data => {})
+      .then(data => {
+        const tr = document.createElement('tr');
+        const arr_fields = Object.entries(data)
+          .filter(([key, value]) => key !== 'user_name')
+          .map(([key, value]) => value);
+
+        arr_fields.push(iconAddEntry.cloneNode(true));
+        arr_fields.forEach(field => {
+          const td = document.createElement('td');
+
+          if (typeof field === 'string') {
+            td.appendChild(document.createTextNode(field));
+          } else {
+            td.appendChild(field);
+          }
+
+          tr.append(td);
+        });
+        workAreaTable.querySelector('tbody').append(tr);
+      })
       .catch(error => {});
   });
 });
