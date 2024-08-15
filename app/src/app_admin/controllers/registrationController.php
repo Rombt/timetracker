@@ -47,13 +47,11 @@ class registrationController extends Controller {
 				echo json_encode( [ 'error' => $idUser->getMessage() ] );
 			}
 			die;
-		} else {
-
-			$data['id'] = $idUser;
-			User::login( $data );
-			echo json_encode( [ 'redirectUrl' => URL . '/workarea/' ] );
-			die;
 		}
+		$data['id'] = $idUser;
+		User::login( $data );
+		echo json_encode( [ 'redirectUrl' => URL . '/workarea/' ] );
+		die;
 
 	}
 

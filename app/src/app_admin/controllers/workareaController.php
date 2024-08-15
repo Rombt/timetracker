@@ -101,14 +101,21 @@ class workareaController extends Controller {
 
 		$resultInsert = $this->model->insertEntry( $dataEntry );
 
-		if ( $resultInsert->getCode() === '23000' ) {
-			http_response_code( 409 );
-			echo json_encode( [ 'error' => "This entries already exists" ] );
-			die;
-		} else {
-			echo json_encode( [ 'success' => 'Entry was insert' ] );
+
+		if ( $resultInsert instanceof PDOException ) {
+
+			if ( $resultInsert->getCode() === '23000' ) {
+				http_response_code( 409 );
+				echo json_encode( [ 'error' => "This entries already exists" ] );
+			}
+			// elseif () {
+			// }
+
 			die;
 		}
+		echo json_encode( [ 'success' => 'Entry was insert' ] );
+		die;
+
 
 	}
 
